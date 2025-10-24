@@ -1,14 +1,13 @@
 /* Color Palette (Based on the NEW Flag Concept: Blue, White, Red) */
 :root {
     --color-sky-blue: #4A90E2;      /* Top Stripe Color */
-    --color-country: #4a4a4a;
     --color-white: #FFFFFF;         /* Middle Stripe Color */
     --color-vibrant-red: #D0021B;   /* Bottom Stripe Color */
     --color-primary-dark: #2c3e50;  /* Dark Blue/Gray for text/header */
-    --color-accent: #f1c40f;        /* Gold/Yellow for an accent or link hover, replacing Silver */
+    --color-accent: #f1c40f;        /* Gold/Yellow for an accent or link hover */
 }
 
-/* Global Styles */
+/* Global Styles (Unchanged) */
 body {
     font-family: 'Montserrat', sans-serif;
     margin: 0;
@@ -25,12 +24,11 @@ body {
     padding: 20px 0;
 }
 
-/* Header and Navigation */
+/* Header (Unchanged) */
 header {
     background-color: var(--color-primary-dark);
     color: var(--color-white);
     padding: 10px 0;
-    /* Use Blue/Red as border accent */
     border-bottom: 5px solid var(--color-vibrant-red); 
 }
 
@@ -55,37 +53,86 @@ nav a {
 }
 
 nav a:hover {
-    color: var(--color-sky-blue); /* New hover color */
+    color: var(--color-sky-blue);
 }
 
-/* Hero Section */
+/* --- REVISED HERO SECTION STYLES --- */
+
 .hero-section {
-    background-color: var(--color-country); /* Using a bold color for the hero */
-    color: var(--color-white);
-    padding: 80px 0;
-    text-align: center;
+    position: relative;
+    padding: 0; /* Remove padding here, control height with min-height */
+    min-height: 60vh; /* Takes up 60% of the viewport height */
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
+    text-align: center;
 }
 
-.flag-image {
-    width: 200px; /* Slightly larger flag for impact */
-    height: auto;
-    border: 5px solid var(--color-white);
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
-    margin-bottom: 20px;
+.hero-image {
+    /* 1. Set the mountain image as the background */
+    background-image: url('hero-mountain.jpg'); 
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* 2. Create a color overlay to make the text readable */
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    /* Semi-transparent dark blue overlay */
+    background-color: rgba(44, 62, 80, 0.65); 
+    z-index: 1;
+}
+
+/* 3. Style the content */
+.hero-content {
+    position: relative; /* Brings content above the overlay */
+    z-index: 2;
+    color: var(--color-white);
+    padding: 40px;
 }
 
 .hero-content h2 {
-    font-size: 2.8em;
-    margin-bottom: 10px;
-    color: var(--color-sky-blue);
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    font-size: 3.5em; /* Larger heading */
+    margin-bottom: 15px;
+    color: var(--color-white);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    font-weight: 700;
+}
+
+.hero-content p {
+    font-size: 1.3em;
+    margin-bottom: 30px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* 4. The small flag badge in the corner */
+.flag-corner-badge {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 60px;
+    height: auto;
+    border: 3px solid var(--color-white);
+    z-index: 3; /* Keep it above the overlay */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s;
+}
+
+.flag-corner-badge:hover {
+    transform: scale(1.1);
 }
 
 #anthemButton {
-    background-color: var(--color-sky-blue);
+    background-color: var(--color-vibrant-red); /* Use Red for action button */
     color: var(--color-white);
     border: none;
     padding: 12px 25px;
@@ -97,108 +144,10 @@ nav a:hover {
 }
 
 #anthemButton:hover {
-    background-color: #3b7ad5; /* A darker blue on hover */
+    background-color: #a00215; 
     transform: translateY(-2px);
 }
 
-/* Content Sections */
-.content-section {
-    padding: 60px 0;
-    text-align: center;
-}
-
-.content-section:nth-child(even) {
-    background-color: var(--color-white);
-}
-
-.content-section:nth-child(odd) {
-    background-color: #f4f4f4;
-}
-
-.content-section h3 {
-    color: var(--color-vibrant-red);
-    font-size: 2.2em;
-    margin-bottom: 30px;
-    border-bottom: 3px solid var(--color-sky-blue);
-    display: inline-block;
-    padding-bottom: 5px;
-}
-
-/* Emblem/Color Meaning Grid */
-.symbol-grid {
-    display: flex;
-    flex-wrap: wrap; /* Allows wrapping for the 5 items */
-    justify-content: center; /* Center alignment */
-    gap: 25px;
-    margin-top: 40px;
-}
-
-.symbol-item {
-    flex-basis: 180px; /* Fixed width for consistent layout */
-    text-align: center;
-    padding: 15px;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    background-color: var(--color-white);
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
-}
-
-.color-box {
-    width: 50px;
-    height: 50px;
-    margin: 0 auto 10px;
-    border-radius: 50%;
-    border: 2px solid var(--color-primary-dark);
-}
-
-.sky-blue { background-color: var(--color-sky-blue); }
-.pure-white { background-color: var(--color-white); border-color: var(--color-sky-blue);}
-.vibrant-red { background-color: var(--color-vibrant-red); }
-
-.symbol-mountain {
-    /* Simple visual placeholder for the mountain */
-    width: 0;
-    height: 0;
-    border-left: 30px solid transparent;
-    border-right: 30px solid transparent;
-    border-bottom: 50px solid var(--color-primary-dark);
-    margin: 0 auto 10px;
-}
-
-.symbol-star {
-    font-size: 3em;
-    color: var(--color-primary-dark);
-    display: block;
-    line-height: 1;
-    margin-bottom: 10px;
-}
-
-
-.symbol-item h4 {
-    margin-top: 0;
-    color: var(--color-primary-dark);
-}
-
-.anthem-lyrics {
-    white-space: pre-line;
-    font-style: italic;
-    color: var(--color-primary-dark);
-    max-width: 600px;
-    margin: 20px auto;
-    line-height: 1.8;
-    text-align: left;
-    background-color: var(--color-white);
-    padding: 20px;
-    border-radius: 5px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    border-left: 5px solid var(--color-vibrant-red);
-}
-
-/* Footer */
-footer {
-    background-color: var(--color-primary-dark);
-    color: var(--color-white);
-    text-align: center;
-    padding: 20px 0;
-    font-size: 0.9em;
-}
+/* (Remaining CSS sections are mostly unchanged from the previous revision) */
+/* Content Sections, Emblem Grid, Footer... */
+/* ... (Keep the rest of the style.css code from the previous response) ... */
