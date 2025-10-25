@@ -1,98 +1,167 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Kaelen Republic - Stability. Aspiration. Unity.</title>
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Kaelen Republic</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+  <!-- Hero Section -->
+  <header class="hero">
+    <div class="overlay"></div>
+    <div class="hero-content">
+      <img src="images/Flag3.png" alt="Flag of The Kaelen Republic" class="flag" />
+      <h1>The Kaelen Republic</h1>
+      <p>Unity • Progress • Freedom</p>
+      <button id="learnMore">Explore the Nation</button>
+    </div>
+  </header>
 
-    <header>
-        <div class="container">
-            <h1>The Kaelen Republic</h1>
-            <nav>
-                <a href="#about">About</a>
-                <a href="#emblem">Symbolism</a>
-                <a href="#anthem">Anthem</a>
-                <a href="https://www.kaelen.kl" target="_blank">Portal (KL)</a>
-            </nav>
+  <!-- About Section -->
+  <section id="about" class="section about">
+    <h2>About Our Republic</h2>
+    <p>
+      The Kaelen Republic is a thriving island nation celebrated for its innovation,
+      cultural diversity, and deep respect for democracy. Its citizens — the Kaelens —
+      embody values of unity, equality, and responsibility for future generations.
+    </p>
+  </section>
+
+  <!-- Geography Section -->
+  <section id="geography" class="section geography">
+    <h2>Geography & Climate</h2>
+    <p>
+      Situated in the heart of the Azure Sea, The Kaelen Republic features sweeping coastlines,
+      rich agricultural plains, and majestic northern mountains. Its climate is temperate
+      and oceanic, fostering vibrant ecosystems and sustainable living.
+    </p>
+    <img src="images/countryima.webp" alt="Map of The Kaelen Republic" class="map-image" />
+  </section>
+
+  <!-- Government Section -->
+  <section id="government" class="section government">
+    <h2>Government & Society</h2>
+    <p>
+      The Kaelen Republic is a constitutional democracy governed by the Assembly of Provinces
+      and led by an elected Prime Minister. The government emphasizes transparency,
+      civic engagement, and technological advancement for public welfare.
+    </p>
+    <ul>
+      <li><strong>Capital:</strong> Kaelora City</li>
+      <li><strong>Population:</strong> 8.2 million</li>
+      <li><strong>Official Language:</strong> Kaelonic & English</li>
+      <li><strong>Currency:</strong> Kaelen Crown (KRC)</li>
+    </ul>
+  </section>
+
+  <!-- Prime Minister Section -->
+  <section id="prime-minister" class="section pm">
+    <h2>Prime Minister of The Kaelen Republic</h2>
+    <div class="pm-container">
+      <img src="images/PM.webp" alt="Prime Minister of The Kaelen Republic" class="pm-photo" />
+      <div class="pm-info">
+        <h3>Prime Minister Arion Varek</h3>
+        <p>
+          Arion Varek has served as Prime Minister since 2023. A former engineer and diplomat,
+          he is known for his visionary leadership, focus on green technology, and commitment
+          to international cooperation. Under his guidance, The Kaelen Republic has advanced
+          in digital infrastructure, education reform, and sustainable energy development.
+        </p>
+        <p>
+          His administration’s guiding principle is “Progress through Unity,” a reflection of
+          the nation’s enduring belief that collective strength drives innovation and peace.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Culture Section -->
+  <section id="culture" class="section culture">
+    <h2>Culture & Heritage</h2>
+    <p>
+      Kaelen culture celebrates creativity, balance, and innovation. The people value both
+      ancient traditions and futuristic ideas. Festivals like the <em>Festival of Lights</em>
+      honor the Republic’s founding through art, music, and community unity.
+    </p>
+  </section>
+    <!-- National Enterprises Section (NEW) -->
+  <section id="enterprises" class="section enterprises">
+    <div class="section-header">
+      <h2>National Enterprises of The Kaelen Republic</h2>
+      <div class="enterprise-filters" role="tablist" aria-label="Enterprise filters">
+        <button class="filter-btn active" data-filter="all" role="tab" aria-selected="true">All</button>
+        <button class="filter-btn" data-filter="owned" role="tab" aria-selected="false">Owned</button>
+        <button class="filter-btn" data-filter="acquiring" role="tab" aria-selected="false">Currently Acquiring</button>
+      </div>
+    </div>
+
+    <p class="section-sub">Publicly-held, wholly-owned, and strategic investments managed by the Republic.</p>
+
+    <div class="enterprise-grid">
+      <!-- Owned: Roblox -->
+      <article class="company-card" data-type="owned">
+        <div class="company-media">
+          <img src="images/RBLXLogo.webp" alt="Roblox logo" class="company-logo" />
         </div>
-    </header>
+        <div class="company-body">
+          <h3 class="company-name">Roblox</h3>
+          <p class="company-desc">A global interactive entertainment platform focused on community-created experiences. Owned by the State Investment Authority.</p>
+        </div>
+        <div class="company-footer">
+          <span class="badge owned">Owned</span>
+          <button class="btn view-img" data-img="company_roblox.png" aria-label="View Roblox image">View</button>
+        </div>
+      </article>
 
-    <main>
-        <section id="hero" class="hero-section hero-image"> 
-            <div class="hero-content">
-                <img src="images/FlagFun.webp" alt="Flag of the Kaelen Republic" class="flag-corner-badge"> 
-                
-                <h2>Stability. Aspiration. Unity.</h2>
-                <p>A sovereign state built on courage, high ideals, and unwavering resilience.</p>
-                <button id="anthemButton">Hear the National Call</button>
-            </div>
-        </section>
+      <!-- Currently Acquiring: NovaGrid (example) -->
+      <article class="company-card" data-type="owned">
+        <div class="company-media">
+          <img src="images/novagrid.webp" alt="NovaGrid logo" class="company-logo" />
+        </div>
+        <div class="company-body">
+          <h3 class="company-name">NovaGrid</h3>
+          <p class="company-desc">A renewable-energy startup specializing in modular grid systems. Acquisition pending regulatory approval.</p>
+        </div>
+        <div class="company-footer">
+          <span class="badge owned">Owned</span>
+          <button class="btn view-img" data-img="company_acquire1.png" aria-label="View NovaGrid image">View</button>
+        </div>
+      </article>
 
-        <section id="about" class="content-section">
-            <div class="container">
-                <h3>The Heart of Kaelen</h3>
-                <p>The Kaelen Republic is a nation defined by its soaring, snow-capped peaks and deep-rooted democratic values. Formed from a union of two foundational regions, its system is based on clarity and balance. The name "Kaelen" embodies the unyielding **Stability** of its mountains, providing the bedrock for the nation's high **Aspiration** and enduring **Unity**.</p>
-            </div>
-        </section>
+      <!-- Currently Acquiring: MeridianWorks (example) -->
+      <article class="company-card" data-type="acquiring">
+        <div class="company-media">
+          <img src="images/MWorks.webp" alt="MeridianWorks logo" class="company-logo" />
+        </div>
+        <div class="company-body">
+          <h3 class="company-name">MeridianWorks</h3>
+          <p class="company-desc">A logistics and automation firm being integrated to support national infrastructure projects.</p>
+        </div>
+        <div class="company-footer">
+          <span class="badge acquiring">Acquiring</span>
+          <button class="btn view-img" data-img="company_acquire2.png" aria-label="View MeridianWorks image">View</button>
+        </div>
+      </article>
+    </div>
 
-        <section id="emblem" class="content-section color-meaning-section">
-            <div class="container">
-                <h3>Flag and Emblem Symbolism</h3>
-                <div class="symbol-grid">
-                    <div class="symbol-item">
-                        <div class="color-box sky-blue"></div>
-                        <h4>Sky Blue (Aspiration)</h4>
-                        <p>Represents the **high ideals** and **Aspiration** of the Kaelen people.</p>
-                    </div>
-                    <div class="symbol-item">
-                        <div class="color-box pure-white"></div>
-                        <h4>Pure White (Unity)</h4>
-                        <p>Represents **Unity**, clarity, and the **snow-capped peaks** of Kaelen.</p>
-                    </div>
-                    <div class="symbol-item">
-                        <div class="color-box vibrant-red"></div>
-                        <h4>Vibrant Red (Resilience)</h4>
-                        <p>Represents the **Resilience**, courage, and **vitality** of the land and its founders.</p>
-                    </div>
-                    <div class="symbol-item">
-                        <div class="symbol-mountain"></div>
-                        <h4>The Mountain Peaks</h4>
-                        <p>Symbolizes the core value of **Stability** and the natural, unyielding strength of the Republic.</p>
-                    </div>
-                    <div class="symbol-item">
-                        <span class="symbol-star">★</span>
-                        <h4>The Two Stars</h4>
-                        <p>Represents the **Two Foundational Regions** that united to form the Kaelen Republic.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
+    <!-- Lightbox / Modal for viewing images -->
+    <div id="imgModal" class="img-modal" aria-hidden="true">
+      <div class="img-modal-backdrop"></div>
+      <div class="img-modal-content" role="dialog" aria-modal="true" aria-label="Company image">
+        <button class="img-modal-close" aria-label="Close image">✕</button>
+        <img src="" alt="" id="imgModalImg" />
+        <p id="imgModalCaption" class="img-caption"></p>
+      </div>
+    </div>
+  </section>
 
-        <section id="anthem" class="content-section" style="display:none;">
-            <div class="container">
-                <h3>The National Anthem of Kaelen</h3>
-                <p>"The Sky, The Snow, The Earth"</p>
-                <p class="anthem-lyrics">
-                    *I. Upon the Slate We Stand, Unmoving and True,<br>
-                    II. The Triad's Vow, Made Strong for Me and You,<br>
-                    III. From Greenest Roots, The Silver Spire Shall Grow,<br>
-                    IV. Stability, Aspiration, Unity, We Know.*
-                </p>
-                <p>*(Anthem text provided for inspiration, normally audio would play here)*</p>
-            </div>
-        </section>
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 The Kaelen Republic — Ministry of Information</p>
+  </footer>
 
-    </main>
-
-    <footer>
-        <p>&copy; 2025 The Kaelen Republic. Official Code: KL.</p>
-    </footer>
-
-    <script src="script.js"></script>
-
+  <script src="script.js"></script>
 </body>
 </html>
+

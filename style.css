@@ -1,153 +1,388 @@
-/* Color Palette (Based on the NEW Flag Concept: Blue, White, Red) */
-:root {
-    --color-sky-blue: #4A90E2;      /* Top Stripe Color */
-    --color-white: #FFFFFF;         /* Middle Stripe Color */
-    --color-vibrant-red: #D0021B;   /* Bottom Stripe Color */
-    --color-primary-dark: #2c3e50;  /* Dark Blue/Gray for text/header */
-    --color-accent: #f1c40f;        /* Gold/Yellow for an accent or link hover */
+/* Global Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-/* Global Styles (Unchanged) */
 body {
-    font-family: 'Montserrat', sans-serif;
-    margin: 0;
-    padding: 0;
-    color: var(--color-primary-dark);
-    background-color: #f8f8f8;
-    line-height: 1.6;
+  font-family: "Poppins", sans-serif;
+  background-color: #0d1117;
+  color: #e6edf3;
+  line-height: 1.7;
 }
 
-.container {
-    width: 85%;
-    margin: 0 auto;
-    max-width: 1200px;
-    padding: 20px 0;
+/* Hero Section */
+.hero {
+  position: relative;
+  background: url('hero.jpg') no-repeat center center/cover;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
 }
 
-/* Header (Unchanged) */
-header {
-    background-color: var(--color-primary-dark);
-    color: var(--color-white);
-    padding: 10px 0;
-    border-bottom: 5px solid var(--color-vibrant-red); 
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.55);
 }
 
-header .container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-header h1 {
-    margin: 0;
-    font-size: 1.8em;
-    font-weight: 700;
-}
-
-nav a {
-    color: var(--color-white);
-    text-decoration: none;
-    margin-left: 20px;
-    font-weight: 400;
-    transition: color 0.3s;
-}
-
-nav a:hover {
-    color: var(--color-sky-blue);
-}
-
-/* --- REVISED HERO SECTION STYLES --- */
-
-.hero-section {
-    position: relative;
-    padding: 0; /* Remove padding here, control height with min-height */
-    min-height: 60vh; /* Takes up 60% of the viewport height */
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-}
-
-.hero-image {
-    /* 1. Set the mountain image as the background */
-    background-image: url('hero-mountain.jpg'); 
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-}
-
-/* 2. Create a color overlay to make the text readable */
-.hero-section::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    /* Semi-transparent dark blue overlay */
-    background-color: rgba(44, 62, 80, 0.65); 
-    z-index: 1;
-}
-
-/* 3. Style the content */
 .hero-content {
-    position: relative; /* Brings content above the overlay */
-    z-index: 2;
-    color: var(--color-white);
-    padding: 40px;
+  position: relative;
+  z-index: 2;
+  max-width: 700px;
+  padding: 1rem;
 }
 
-.hero-content h2 {
-    font-size: 3.5em; /* Larger heading */
-    margin-bottom: 15px;
-    color: var(--color-white);
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
-    font-weight: 700;
+.flag {
+  width: 130px;
+  border: 2px solid #fff;
+  border-radius: 10px;
+  margin-bottom: 1rem;
 }
 
-.hero-content p {
-    font-size: 1.3em;
-    margin-bottom: 30px;
-    max-width: 600px;
-    margin-left: auto;
-    margin-right: auto;
+.hero h1 {
+  font-size: 3rem;
+  letter-spacing: 2px;
 }
 
-/* 4. The small flag badge in the corner */
-.flag-corner-badge {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    width: 60px;
-    height: auto;
-    border: 3px solid var(--color-white);
-    z-index: 3; /* Keep it above the overlay */
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-    transition: transform 0.3s;
+.hero p {
+  font-size: 1.3rem;
+  margin-bottom: 1.5rem;
 }
 
-.flag-corner-badge:hover {
-    transform: scale(1.1);
+button {
+  background: #ffd700;
+  color: #000;
+  border: none;
+  padding: 0.8rem 1.6rem;
+  border-radius: 25px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: 0.3s ease;
 }
 
-#anthemButton {
-    background-color: var(--color-vibrant-red); /* Use Red for action button */
-    color: var(--color-white);
-    border: none;
-    padding: 12px 25px;
-    font-size: 1em;
-    cursor: pointer;
-    margin-top: 20px;
-    border-radius: 5px;
-    transition: background-color 0.3s, transform 0.1s;
+button:hover {
+  background: #ffec80;
 }
 
-#anthemButton:hover {
-    background-color: #a00215; 
-    transform: translateY(-2px);
+/* Section Base Styles */
+.section {
+  padding: 4rem 2rem;
+  text-align: center;
 }
 
-/* (Remaining CSS sections are mostly unchanged from the previous revision) */
-/* Content Sections, Emblem Grid, Footer... */
-/* ... (Keep the rest of the style.css code from the previous response) ... */
+.section h2 {
+  color: #ffd700;
+  margin-bottom: 1rem;
+  font-size: 2rem;
+}
+
+.section p {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* Map */
+.map-image {
+  margin-top: 1.5rem;
+  width: 80%;
+  max-width: 700px;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(255, 215, 0, 0.3);
+}
+
+/* Government */
+.government ul {
+  list-style: none;
+  margin-top: 1rem;
+}
+
+.government li {
+  margin: 0.4rem 0;
+}
+
+/* Prime Minister Section */
+.pm-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.pm-photo {
+  width: 200px;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(255, 215, 0, 0.3);
+  border: 2px solid #ffd700;
+}
+
+.pm-info {
+  max-width: 800px;
+  text-align: left;
+}
+
+.pm-info h3 {
+  color: #ffd700;
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+/* Responsive Design */
+@media (min-width: 768px) {
+  .pm-container {
+    flex-direction: row;
+    text-align: left;
+    justify-content: center;
+  }
+
+  .pm-photo {
+    width: 250px;
+    margin-right: 2rem;
+  }
+}
+
+/* Footer */
+footer {
+  background: #070b10;
+  padding: 1rem;
+  text-align: center;
+  color: #999;
+  font-size: 0.9rem;
+}
+.enterprises {
+  padding: 3.5rem 1.5rem;
+  background: linear-gradient(180deg, rgba(13,17,23,0.98) 0%, rgba(11,14,18,1) 100%);
+  color: #e9eef2;
+  text-align: center;
+}
+
+.section-header {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 0.6rem;
+}
+
+.enterprise-filters {
+  display: inline-flex;
+  gap: 0.5rem;
+}
+
+.filter-btn {
+  background: transparent;
+  border: 1px solid rgba(255,215,0,0.12);
+  color: #ffd700;
+  padding: 0.45rem 0.8rem;
+  border-radius: 18px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all .15s ease;
+}
+
+.filter-btn.active,
+.filter-btn:focus {
+  background: #ffd700;
+  color: #071019;
+  outline: none;
+  transform: translateY(-1px);
+}
+
+.section-sub {
+  max-width: 900px;
+  margin: 0.6rem auto 1.2rem;
+  color: #cbd6df;
+}
+
+/* Grid */
+.enterprise-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.25rem;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.company-card {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01));
+  border-radius: 12px;
+  padding: 1rem;
+  box-shadow: 0 8px 18px rgba(0,0,0,0.45);
+  border: 1px solid rgba(255,255,255,0.03);
+}
+
+.company-media {
+  flex: 0 0 110px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.company-logo {
+  max-width: 100%;
+  max-height: 80px;
+  object-fit: contain;
+  border-radius: 6px;
+  background: rgba(255,255,255,0.02);
+  padding: 8px;
+}
+
+.company-body {
+  flex: 1 1 auto;
+  text-align: left;
+}
+
+.company-name {
+  color: #ffd700;
+  margin-bottom: 0.25rem;
+  font-size: 1.1rem;
+}
+
+.company-desc {
+  color: #c9d3da;
+  font-size: 0.95rem;
+  line-height: 1.35;
+}
+
+/* Footer area of card */
+.company-footer {
+  display: flex;
+  gap: 0.6rem;
+  align-items: center;
+  justify-content: flex-end;
+  flex: 0 0 160px;
+}
+
+/* Badges and buttons */
+.badge {
+  padding: 0.35rem 0.6rem;
+  border-radius: 999px;
+  font-weight: 700;
+  font-size: 0.82rem;
+  letter-spacing: .4px;
+  color: #071019;
+}
+
+.badge.owned {
+  background: #ffd700;
+}
+
+.badge.acquiring {
+  background: #ffb86b;
+  color: #071019;
+}
+
+.btn {
+  background: transparent;
+  border: 1px solid rgba(255,255,255,0.06);
+  color: #e6edf3;
+  padding: 0.45rem 0.7rem;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+/* Responsive */
+@media (min-width: 760px) {
+  .enterprise-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1100px) {
+  .enterprise-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .company-card {
+    flex-direction: column;
+    align-items: stretch;
+    padding: 1.1rem;
+  }
+
+  .company-media {
+    flex: 0 0 auto;
+    margin: 0 auto;
+  }
+
+  .company-footer {
+    justify-content: space-between;
+    margin-top: 0.6rem;
+  }
+}
+
+/* -------------------------
+   Image Modal
+   ------------------------- */
+.img-modal {
+  position: fixed;
+  inset: 0;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 1200;
+}
+
+.img-modal.show {
+  display: flex;
+}
+
+.img-modal-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(4,6,8,0.75);
+  backdrop-filter: blur(4px);
+}
+
+.img-modal-content {
+  position: relative;
+  z-index: 2;
+  max-width: 90%;
+  max-height: 90%;
+  background: #081014;
+  padding: 1rem;
+  border-radius: 10px;
+  box-shadow: 0 18px 40px rgba(0,0,0,0.7);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.img-modal-content img {
+  max-width: 100%;
+  max-height: calc(90vh - 160px);
+  border-radius: 6px;
+  object-fit: contain;
+}
+
+.img-modal-close {
+  position: absolute;
+  top: 10px;
+  right: 12px;
+  background: transparent;
+  border: none;
+  color: #e6edf3;
+  font-size: 1.25rem;
+  cursor: pointer;
+}
+
+.img-caption {
+  color: #bfcbd6;
+  font-size: 0.95rem;
+  text-align: center;
+}
